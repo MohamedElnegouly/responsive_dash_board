@@ -3,9 +3,16 @@ import 'package:responsive_dash_board/models/all_expenses_item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'package:responsive_dash_board/widgets/all_expenses_item.dart';
 
-class AllExpensesItemListView extends StatelessWidget {
+class AllExpensesItemListView extends StatefulWidget {
   const AllExpensesItemListView({super.key});
-  static const List<AllExpensesItemModel> items = [
+
+  @override
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
+}
+
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
+  final List<AllExpensesItemModel> items = const [
     AllExpensesItemModel(
         title: 'Balance',
         image: Assets.imagesBalance,
@@ -22,6 +29,7 @@ class AllExpensesItemListView extends StatelessWidget {
         date: 'May 2022',
         price: r'$20,129'),
   ];
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,15 +39,41 @@ class AllExpensesItemListView extends StatelessWidget {
         int index = e.key;
         if (index == 1) {
           return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensesItem(allExpensesItemModel: item),
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpensesItem(
+                  allExpensesItemModel: item,
+                  isSelected: selectedIndex == index,
+                ),
+              ),
             ),
           );
         } else {
-          return Expanded(child: AllExpensesItem(allExpensesItemModel: item));
+          return Expanded(
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: AllExpensesItem(
+                allExpensesItemModel: item,
+                isSelected: selectedIndex == index,
+              ),
+            ),
+          );
         }
       }).toList(),
     );
+  }
+
+  void updateIndex(int index) {
+    if (selectedIndex != index) {
+      setState(() {
+        selectedIndex = index;
+      });
+    }
   }
 }
