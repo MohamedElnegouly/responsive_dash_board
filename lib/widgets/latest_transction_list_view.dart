@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/models/user_info_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
@@ -21,15 +23,27 @@ class LatestTransctionListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: ListView.builder(
-          itemCount: items.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return IntrinsicWidth(
-                child: UserInfoListTile(userInfoModel: items[index]));
-          }),
+    //two wayes to do height of the list view
+    // 1. using row and items list better for small list 
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: items
+            .map((e) =>
+                IntrinsicWidth(child: UserInfoListTile(userInfoModel: e)))
+            .toList(),
+      ),
     );
+    //2. using listview.builder detect the height of the child better for large list
+    // return SizedBox(
+    //   height: 80,
+    //   child: ListView.builder(
+    //       itemCount: items.length,
+    //       scrollDirection: Axis.horizontal,
+    //       itemBuilder: (context, index) {
+    //         return IntrinsicWidth(
+    //             child: UserInfoListTile(userInfoModel: items[index]));
+    //       }),
+    // );
   }
 }
