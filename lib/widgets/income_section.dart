@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/widgets/Custom_background_container.dart';
+import 'package:responsive_dash_board/widgets/income_chart.dart';
 import 'package:responsive_dash_board/widgets/income_section_header.dart';
-
 
 class IncomeSection extends StatelessWidget {
   const IncomeSection({super.key});
@@ -10,7 +10,16 @@ class IncomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustyomBackgroundContainer(
         child: Column(
-      children: [IncomeSectionHeader()],
+      children: [
+        IncomeSectionHeader(),
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(child: IncomeChart()),
+            ],
+          ),
+        ),
+      ],
     ));
   }
 }
