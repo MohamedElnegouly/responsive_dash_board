@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
+import 'package:responsive_dash_board/widgets/transction_history_list_view.dart';
 
 class TransctionHistory extends StatelessWidget {
   const TransctionHistory({super.key});
@@ -31,6 +32,7 @@ class TransctionHistory extends StatelessWidget {
           '13 April 2022',
           style: AppStyles.styleMedium16,
         ),
+        TransctionHistoryListView(),
       ],
     );
   }
