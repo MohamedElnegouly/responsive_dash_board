@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/widgets/All_expenses_and_quick_invoice.dart';
+import 'package:responsive_dash_board/widgets/custom_dot.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
+import 'package:responsive_dash_board/widgets/dots_indicator.dart';
 import 'package:responsive_dash_board/widgets/my_card.dart';
 import 'package:responsive_dash_board/widgets/my_cards_page_view.dart';
 
@@ -14,7 +16,7 @@ class DashboardDesktopLayout extends StatelessWidget {
         Expanded(child: CustomDrawer()),
         SizedBox(width: 32),
         Expanded(
-          flex: 2,
+          flex: 3,
           child: CustomScrollView(
             slivers: [
               SliverFillRemaining(
