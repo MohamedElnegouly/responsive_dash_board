@@ -32,7 +32,10 @@ class TransctionHistory extends StatelessWidget {
           '13 April 2022',
           style: AppStyles.styleMedium16,
         ),
-        TransctionHistoryListView(),
+        const SizedBox(
+          height: 16,
+        ),
+        const TransctionHistoryListView(),
       ],
     );
   }
