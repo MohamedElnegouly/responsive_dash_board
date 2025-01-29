@@ -13,10 +13,7 @@ class DashboardMobileLayout extends StatelessWidget {
     return const SingleChildScrollView(
       child: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 40),
-            child: AllExpensesAndQuickinvoice(),
-          ),
+          AllExpensesAndQuickinvoice(),
           SizedBox(
             height: 24,
           ),
