@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/models/transction_history.dart';
 import 'package:responsive_dash_board/widgets/transction_item.dart';
+
 
 class TransctionHistoryListView extends StatelessWidget {
   const TransctionHistoryListView({super.key});
@@ -26,11 +29,14 @@ class TransctionHistoryListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: items.length,
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return TransctionItem(transctionHistory: items[index]);
-        });
+    return Column(
+      children: items.map((e) => TransctionItem(transctionHistory: e)).toList(),
+    );
+    // return ListView.builder(
+    //     itemCount: items.length,
+    //     shrinkWrap: true,
+    //     itemBuilder: (context, index) {
+    //       return TransctionItem(transctionHistory: items[index]);
+    //     });
   }
 }
