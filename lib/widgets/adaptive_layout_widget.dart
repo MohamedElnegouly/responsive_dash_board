@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/utils/sized_config.dart';
 
 class AdaptiveLayout extends StatelessWidget {
   const AdaptiveLayout(
@@ -13,9 +14,9 @@ class AdaptiveLayout extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: LayoutBuilder(builder: (context, constraints) {
-        if (constraints.maxWidth < 800) {
+        if (constraints.maxWidth < SizedConfig.tablet) {
           return mobileLayout(context);
-        } else if (constraints.maxWidth < 1300) {
+        } else if (constraints.maxWidth < SizedConfig.desktop) {
           return tabletLayout(context);
         } else {
           return disktopLayout(context);
