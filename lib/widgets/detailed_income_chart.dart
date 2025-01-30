@@ -37,7 +37,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
       sectionsSpace: 0,
       sections: [
         PieChartSectionData(
-          titleStyle: AppStyles.styleSemiBold20
+          titleStyle: AppStyles.styleSemiBold20(context)
               .copyWith(color: isActive == 0 ? null : Colors.white),
           titlePositionPercentageOffset: isActive == 0 ? 1.5 : null,
           radius: isActive == 0 ? 65 : 50,
@@ -46,7 +46,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           color: const Color(0XFF208CC8),
         ),
         PieChartSectionData(
-          titleStyle: AppStyles.styleSemiBold20
+          titleStyle: AppStyles.styleSemiBold20(context)
               .copyWith(color: isActive == 1 ? null : Colors.white),
           radius: isActive == 1 ? 65 : 50,
           titlePositionPercentageOffset: isActive == 1 ? 2.4 : null,
@@ -55,7 +55,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           color: const Color(0XFF4EB7F2),
         ),
         PieChartSectionData(
-          titleStyle: AppStyles.styleSemiBold20
+          titleStyle: AppStyles.styleSemiBold20(context)
               .copyWith(color: isActive == 2 ? null : Colors.white),
           title: isActive == 2 ? 'Product royalti' : '20%',
           titlePositionPercentageOffset: isActive == 2 ? 1.4 : null,
@@ -64,7 +64,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
           color: const Color(0XFF064061),
         ),
         PieChartSectionData(
-          titleStyle: AppStyles.styleSemiBold20
+          titleStyle: AppStyles.styleSemiBold20(context)
               .copyWith(color: isActive == 3 ? null : Colors.white),
           title: isActive == 3 ? 'Other' : '22%',
           titlePositionPercentageOffset: isActive == 3 ? 1.5 : null,

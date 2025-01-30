@@ -18,11 +18,11 @@ class IncomeItemDetails extends StatelessWidget {
       ),
       title: Text(
         incomeDetailesModel.title,
-        style: AppStyles.styleRegular16,
+        style: AppStyles.styleRegular16(context),
       ),
       trailing: Text(
         incomeDetailesModel.count,
-        style: AppStyles.styleMedium16,
+        style: AppStyles.styleMedium16(context),
       ),
     );
   }
