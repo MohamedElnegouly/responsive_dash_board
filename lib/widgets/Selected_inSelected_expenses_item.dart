@@ -32,11 +32,23 @@ class UnSelectedExpensesItem extends StatelessWidget {
             image: allExpensesItemModel.image,
           ),
           const SizedBox(height: 34),
-          Text(allExpensesItemModel.title, style: AppStyles.styleBold16(context)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensesItemModel.title,
+                style: AppStyles.styleBold16(context)),
+          ),
           const SizedBox(height: 8),
-          Text(allExpensesItemModel.date, style: AppStyles.styleRegular14(context)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensesItemModel.date,
+                style: AppStyles.styleRegular14(context)),
+          ),
           const SizedBox(height: 16),
-          Text(allExpensesItemModel.price, style: AppStyles.styleSemiBold24(context)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensesItemModel.price,
+                style: AppStyles.styleSemiBold24(context)),
+          ),
         ],
       ),
     );
@@ -58,6 +70,10 @@ class SelectedExpensesItem extends StatelessWidget {
       decoration: ShapeDecoration(
         color: const Color(0XFF4EB7F2),
         shape: RoundedRectangleBorder(
+          side: const BorderSide(
+            width: 1,
+            color: Color(0XFF4EB7F2),
+          ),
           borderRadius: BorderRadius.circular(12),
         ),
       ),
@@ -66,19 +82,31 @@ class SelectedExpensesItem extends StatelessWidget {
         children: [
           AllExpensesItemHeader(
             imageBackground:
-            Colors.white.withValues(alpha: 0.100000000149011612),
+                Colors.white.withValues(alpha: 0.100000000149011612),
             imageColor: Colors.white,
             image: allExpensesItemModel.image,
           ),
           const SizedBox(height: 34),
-          Text(allExpensesItemModel.title,
-              style: AppStyles.styleBold16(context).copyWith(color: Colors.white)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensesItemModel.title,
+                style: AppStyles.styleBold16(context)
+                    .copyWith(color: Colors.white)),
+          ),
           const SizedBox(height: 8),
-          Text(allExpensesItemModel.date,
-              style: AppStyles.styleRegular14(context).copyWith(color: Colors.white60)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensesItemModel.date,
+                style: AppStyles.styleRegular14(context)
+                    .copyWith(color: Colors.white60)),
+          ),
           const SizedBox(height: 16),
-          Text(allExpensesItemModel.price,
-              style: AppStyles.styleSemiBold24(context).copyWith(color: Colors.white)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(allExpensesItemModel.price,
+                style: AppStyles.styleSemiBold24(context)
+                    .copyWith(color: Colors.white)),
+          ),
         ],
       ),
     );
